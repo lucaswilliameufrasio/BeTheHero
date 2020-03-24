@@ -1,16 +1,13 @@
 const express = require('express');
+const cors = require('cors');
+const routes = require('./routes');
 
 const app = express();
 
+app.use(cors());
+
 app.use(express.json());
 
-app.post('/users', (request, response) => {
-    const body = request.body;
-
-    return response.json({
-        message: 'Hello World',
-        data: body
-    });
-});
+app.use(routes);
 
 app.listen(7777);
