@@ -5,6 +5,6 @@ de casos de ONGs relacionadas a animais de estimação, as quais tem o papel de 
 em estado de risco ou mal trato.
 
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/34021576/77621005-52f76800-6f1a-11ea-9abc-c8066dd40950.png" width="70%" height="570" alt="Be The Hero"> 
+    <img src="https://user-images.githubusercontent.com/34021576/77621005-52f76800-6f1a-11ea-9abc-c8066dd40950.png" width="70%" height="50%" alt="Be The Hero"> 
 </div>
 
