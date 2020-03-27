@@ -7,7 +7,7 @@ em estado de risco ou mal trato.
 
 
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/34021576/77621005-52f76800-6f1a-11ea-9abc-c8066dd40950.png" width="70%" height="50%" alt="Be The Hero"> 
-    <img src="https://user-images.githubusercontent.com/34021576/77731862-83a2d480-6fe2-11ea-82f4-6fe73333878d.png" width="26%" height="20%" alt="Be The Hero"> 
+    <img src="https://user-images.githubusercontent.com/34021576/77621005-52f76800-6f1a-11ea-9abc-c8066dd40950.png" width="50%" height="50%" alt="Be The Hero"> 
+    <img src="https://user-images.githubusercontent.com/34021576/77733485-b8645b00-6fe5-11ea-9543-dd48125e3114.png" width="48%" height="20%" alt="Be The Hero"> 
 </div>
 
