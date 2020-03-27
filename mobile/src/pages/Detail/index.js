@@ -39,6 +39,7 @@ export default function Detail() {
 
                 <TouchableOpacity
                     onPress={navigateBack}
+                    hitSlop={{top: 18, left: 20, bottom: 18, right: 20}}
                 >
                     <Feather name="arrow-left" size={28} color="#E02041" />
                 </TouchableOpacity>

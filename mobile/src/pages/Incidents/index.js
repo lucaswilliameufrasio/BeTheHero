@@ -62,7 +62,7 @@ export default function Incidents() {
                 data={incidents}
                 style={styles.incidentList}
                 keyExtractor={incident => String(incident.id)}
-                // showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
                 onEndReached={loadIncidents}
                 onEndReachedThreshold={0.2}
                 renderItem={({ item: incident }) => (
@@ -85,6 +85,7 @@ export default function Incidents() {
                         <TouchableOpacity
                             style={styles.detailsButton}
                             onPress={() => navigateToDetail(incident)}
+                            hitSlop={{top: 18, left: 20, bottom: 18, right: 20}}
                         >
                             <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
                             <Feather name="arrow-right" size={16} color="#E02041" />
