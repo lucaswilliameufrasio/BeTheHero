@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import { useForm } from 'react-hook-form';
 
 import api from '../../services/api';
 
@@ -11,12 +12,11 @@ import heroesImg from '../../assets/heroes.png';
 
 export default function Logon() {
     const [id, setId] = useState('');
+    const { register, handleSubmit, errors } = useForm();
 
     const history = useHistory();
 
     async function handleLogin(e) {
-        e.preventDefault();
-
         try {
             const response = await api.post('sessions', { id });
 
@@ -34,14 +34,19 @@ export default function Logon() {
             <section className="form">
                 <img src={logoImg} alt="Be The Hero" />
 
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleSubmit(handleLogin)}>
                     <h1>Faça seu logon</h1>
 
                     <input
                         placeholder="Sua ID"
+                        name="id"
                         value={id}
+                        ref={register({required: true})}
                         onChange={e => setId(e.target.value)}
                     />
+
+                    {errors.id && <span className="validationErrorMessage">É necessário digitar um ID válido antes de continuar.</span>}
+
                     <button className="button" type="submit">Entrar</button>
 
                     <Link className="back-link" to="/register">
