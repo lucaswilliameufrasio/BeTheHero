@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --runInBand --forceExit"
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --runInBand --forceExit",
+    "migrate:up": "npx knex migrate:latest",
+    "migrate:down": "npx knex migrate:rollback --all",
+    "migrate:undo": "npx knex migrate:rollback"
   },
   "devDependencies": {
     "jest": "^26.6.3",
