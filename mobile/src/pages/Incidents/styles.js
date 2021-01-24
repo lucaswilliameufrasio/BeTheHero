@@ -71,5 +71,25 @@ export default StyleSheet.create({
         color: '#E02041',
         fontSize: 15,
         fontWeight: 'bold'
+    },
+
+    errorContainer: {
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1
+    },
+
+    errorButton: {
+        flexDirection: "row",
+        borderColor: "#E02041",
+        borderWidth: 2,
+        borderRadius: 12,
+        padding: 10,
+        justifyContent: "center",
+    },
+
+    errorButtonText: {
+        paddingLeft: 7, 
+        color: "#E02041"
     }
 });
