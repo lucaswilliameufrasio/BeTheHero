@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import { useForm } from 'react-hook-form';
 
 import api from '../../services/api';
 
@@ -14,12 +15,11 @@ export default function Register() {
     const [whatsapp, setWhatsapp] = useState('');
     const [city, setCity] = useState('');
     const [uf, setUf] = useState('');
+    const { register, handleSubmit, errors } = useForm();
 
     const history = useHistory();
 
-    async function handleRegister(e) {
-        e.preventDefault();
-
+    async function handleRegister() {
         const data = {
             name,
             email,
@@ -54,35 +54,56 @@ export default function Register() {
                     </Link>
                 </section>
 
-                <form onSubmit={handleRegister}>
+                <form onSubmit={handleSubmit(handleRegister)}>
                     <input
                         placeholder="Nome da ONG"
                         value={name}
+                        name="name"
+                        ref={register({required: true})}
                         onChange={e => setName(e.target.value)}
                     />
+                    {errors.name && <span className="validationErrorMessage">O nome da ONG é necessário.</span>}
+
                     <input
                         type="email"
                         placeholder="E-mail"
                         value={email}
+                        name="email"
+                        ref={register({required: true})}
                         onChange={e => setEmail(e.target.value)}
                     />
+                    {errors.email && <span className="validationErrorMessage">O e-mail é necessário.</span>}
+
                     <input
                         placeholder="Whatsapp"
                         value={whatsapp}
+                        name="whatsapp"
+                        ref={register({required: true})}
                         onChange={e => setWhatsapp(e.target.value)}
                     />
+                    {errors.whatsapp && <span className="validationErrorMessage">O whatsapp é necessário.</span>}
+
                     <div className="input-group">
                         <input
                             placeholder="Cidade"
                             value={city}
+                            name="city"
+                        ref={register({required: true})}
                             onChange={e => setCity(e.target.value)}
                         />
+                        {errors.city && <span className="validationErrorMessage">A cidade é necessária.</span>}
+
+
                         <input
                             placeholder="UF"
                             style={{ width: 80, }}
                             value={uf}
+                            name="uf"
+                        ref={register({required: true})}
                             onChange={e => setUf(e.target.value)}
                         />
+                        {errors.uf && <span className="validationErrorMessage">A UF (Unidade Federativa) é necessária.</span>}
+
                     </div>
 
                     <button className="button" type="submit">Cadastrar</button>
