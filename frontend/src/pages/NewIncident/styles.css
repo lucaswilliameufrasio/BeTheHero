@@ -43,3 +43,11 @@
 .new-incident-container .content form textarea {
     margin-top: 8px;
 }
+
+
+.validationErrorMessage {
+    display: inline-block;
+    color: red;
+    margin-top: 8px;
+    margin-left: 4px;
+}
