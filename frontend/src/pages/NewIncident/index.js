@@ -8,6 +8,7 @@ import api from '../../services/api';
 import './styles.css';
 
 import logoImg from '../../assets/logo.svg';
+import { ValidationError } from '../../components';
 
 
 export default function NewIncident() {
@@ -60,28 +61,28 @@ export default function NewIncident() {
                         placeholder="Titulo do caso"
                         value={title}
                         name="title"
-                        ref={register({required: true})}
+                        ref={register({ required: true })}
                         onChange={e => setTitle(e.target.value)}
-                    />                    
-                    {errors.title && <span className="validationErrorMessage">O título é necessário.</span>}
+                    />
+                    {errors.title && <ValidationError error="O título é necessário." />}
 
                     <textarea
                         placeholder="Descrição"
                         value={description}
                         name="description"
-                        ref={register({required: true})}
+                        ref={register({ required: true })}
                         onChange={e => setDescription(e.target.value)}
                     />
-                    {errors.description && <span className="validationErrorMessage">É necessário fornecer uma descrição.</span>}
+                    {errors.description && <ValidationError error="É necessário fornecer uma descrição." />}
 
                     <input
                         placeholder="Valor em reais"
                         value={value}
                         name="value"
-                        ref={register({required: true})}
+                        ref={register({ required: true })}
                         onChange={e => setValue(e.target.value)}
                     />
-                    {errors.value && <span className="validationErrorMessage">É necessário fornecer o valor.</span>}
+                    {errors.value && <ValidationError error="É necessário fornecer o valor." />}
 
                     <button className="button" type="submit">Cadastrar</button>
                 </form>

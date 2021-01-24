@@ -8,6 +8,7 @@ import api from '../../services/api';
 import './styles.css';
 
 import logoImg from '../../assets/logo.svg';
+import { ValidationError } from '../../components';
 
 export default function Register() {
     const [name, setName] = useState('');
@@ -62,7 +63,7 @@ export default function Register() {
                         ref={register({required: true})}
                         onChange={e => setName(e.target.value)}
                     />
-                    {errors.name && <span className="validationErrorMessage">O nome da ONG é necessário.</span>}
+                    {errors.name && <ValidationError error="O nome da ONG é necessário." />}
 
                     <input
                         type="email"
@@ -72,7 +73,7 @@ export default function Register() {
                         ref={register({required: true})}
                         onChange={e => setEmail(e.target.value)}
                     />
-                    {errors.email && <span className="validationErrorMessage">O e-mail é necessário.</span>}
+                    {errors.email && <ValidationError error="O e-mail é necessário." />}
 
                     <input
                         placeholder="Whatsapp"
@@ -81,7 +82,7 @@ export default function Register() {
                         ref={register({required: true})}
                         onChange={e => setWhatsapp(e.target.value)}
                     />
-                    {errors.whatsapp && <span className="validationErrorMessage">O whatsapp é necessário.</span>}
+                    {errors.whatsapp && <ValidationError error="O whatsapp é necessário." />}
 
                     <div className="input-group">
                         <input
@@ -91,7 +92,7 @@ export default function Register() {
                         ref={register({required: true})}
                             onChange={e => setCity(e.target.value)}
                         />
-                        {errors.city && <span className="validationErrorMessage">A cidade é necessária.</span>}
+                        {errors.city && <ValidationError error="A cidade é necessária." />}
 
 
                         <input
@@ -102,7 +103,7 @@ export default function Register() {
                         ref={register({required: true})}
                             onChange={e => setUf(e.target.value)}
                         />
-                        {errors.uf && <span className="validationErrorMessage">A UF (Unidade Federativa) é necessária.</span>}
+                        {errors.uf && <ValidationError error="A UF (Unidade Federativa) é necessária." />}
 
                     </div>
 

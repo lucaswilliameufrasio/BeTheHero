@@ -9,6 +9,7 @@ import './styles.css';
 
 import logoImg from '../../assets/logo.svg';
 import heroesImg from '../../assets/heroes.png';
+import {ValidationError} from '../../components';
 
 export default function Logon() {
     const [id, setId] = useState('');
@@ -45,7 +46,7 @@ export default function Logon() {
                         onChange={e => setId(e.target.value)}
                     />
 
-                    {errors.id && <span className="validationErrorMessage">É necessário digitar um ID válido antes de continuar.</span>}
+                    {errors.id && <ValidationError error="É necessário digitar um ID válido antes de continuar."/>}
 
                     <button className="button" type="submit">Entrar</button>
 
